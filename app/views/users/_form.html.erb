@@ -1,0 +1,11 @@
+<%= form_for @user do |f| %>
+	<%= f.text_field :username, :placeholder => 'Enter your username' %><br />
+
+	<%= f.text_field :email, :placeholder => 'Enter your email' %><br />
+
+	<%= f.text_field :password, :placeholder => 'Enter your password' %><br />
+
+	<%= f.text_field :password_confirmation, :placeholder => 'Confirm your password' %><br />
+
+	<%= f.submit 'save' %>
+<% end %>
