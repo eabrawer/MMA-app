@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
     	t.string :username
     	t.string :password_digest
     	t.string :email
+      t.string :admin, :default => false
     	t.integer :wins
     	t.integer :losses
     	t.integer :silver, :default => 100
