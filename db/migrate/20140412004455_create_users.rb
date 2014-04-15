@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
     	t.string :email
     	t.integer :wins
     	t.integer :losses
-    	t.integer :silver
+    	t.integer :silver, :default => 100
       t.timestamps
     end
   end

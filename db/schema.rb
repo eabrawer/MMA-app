@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140412004455) do
     t.string   "email"
     t.integer  "wins"
     t.integer  "losses"
-    t.integer  "silver"
+    t.integer  "silver",          default: 100
     t.datetime "created_at"
     t.datetime "updated_at"
   end
