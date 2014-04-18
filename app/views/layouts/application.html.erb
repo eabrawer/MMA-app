@@ -8,6 +8,8 @@
 </head>
 <body>
 	<ul>
+		<li><%= link_to "Fight Cards", fight_cards_url%></li>	
+		<li><%= link_to "Create a Fight Card", new_fight_card_path%></li>		
 		<% if current_user? %>
 		Signed in as <%= current_user.email %>
 		<li><%= link_to "Log out", session_path("current"), :method => :delete %></li>

@@ -5,10 +5,11 @@ class ApplicationController < ActionController::Base
 
 private
 
-def user_logged_in!
-	return if current_user.present?
-	flash[:alert] = "Please sign in to view that resource"
-	redirect_to new_session_path
+def signed_in?
+	if !current_user
+		flash[:alert] = "Please sign in to view that resource"
+		redirect_to new_session_path
+	end
 end
 
 def sign_in(user)
@@ -31,7 +32,20 @@ def current_user?
 	current_user.present?
 end
 
+def correct_user
+	if current_user != @user
+		flash[:alert] = "That does not belong to you!"
+		redirect_to new_session_path :notice => "You need to be signed in to access that page"
+    end
+end
+
+def admin?
+	current_user.admin == true
+end
+
+
 helper_method :current_user
 helper_method :current_user?
+helper_method :admin?
 
 end

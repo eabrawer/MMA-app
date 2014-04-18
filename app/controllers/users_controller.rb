@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :signed_in?, :only => [:edit, :update, :destroy]
+  before_filter :correct_user, :only => [:edit, :update, :destroy]
   def index
   	@users = User.all
   end
@@ -46,5 +48,7 @@ class UsersController < ApplicationController
   def user_params
   	params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
+
+
 
 end

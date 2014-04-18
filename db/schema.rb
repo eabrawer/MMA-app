@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140415230759) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "email"
-    t.string   "admin",           default: "f"
+    t.boolean  "admin",           default: false
     t.integer  "wins"
     t.integer  "losses"
     t.integer  "silver",          default: 100
