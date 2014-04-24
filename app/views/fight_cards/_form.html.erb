@@ -1,0 +1,9 @@
+<%= form_for @fightcard do |f| %>
+	<%= f.text_field :title, :placeholder => 'Enter your title' %><br />
+
+	<%= f.text_field :start_time, :placeholder => 'Enter your start time' %><br />
+
+	<%= f.text_field :city, :placeholder => 'Enter your city' %><br />
+
+	<%= f.submit 'save' %>
+<% end %>
