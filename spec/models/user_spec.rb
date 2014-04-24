@@ -13,7 +13,15 @@ describe User do
   	expect(subject).to respond_to(:email)
   	expect(subject).to respond_to(:losses)
   	expect(subject).to respond_to(:wins)
-   	expect(subject).to respond_to(:silver) 	
+   	expect(subject).to respond_to(:silver)
+    expect(subject).to respond_to(:admin)  
+  end
+
+  context "when an email has capitals or white space" do
+    it "should be downcased" do
+      subject.email = " Derek@gmail.com "
+      expect(subject.email).to eq("derek@gmail.com")
+    end
   end
 
 end
