@@ -1,7 +1,7 @@
-<% if @user.errors.any? %>
-	<% pluralize(@user.errors.count, "errors") %> prohibited this from being saved
+<% if @fightcard.errors.any? %>
+	<% pluralize(@fightcard.errors.count, "errors") %> prohibited this from being saved
 	<ul>
-	<% @user.errors.full_messages.each do |msg| %>
+	<% @fightcard.errors.full_messages.each do |msg| %>
 		<li><%= msg %></li>
 	<% end %>
 	</ul>

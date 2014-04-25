@@ -15,7 +15,7 @@ class FightCardsController < ApplicationController
 	end
 
 	def create
-		@fightcard = FightCard.new(params_fight_card)
+		@fightcard = FightCard.new(fight_card_params)
 		if @fightcard.save
 			redirect_to fight_card_path, :notice => "Your fight card was successfully created!"
 		else
@@ -29,7 +29,7 @@ class FightCardsController < ApplicationController
 
 	def update
 		@fightcard = FightCard.find(params[:id])
-		if @fightcard.update_attributes(params_fight_card)
+		if @fightcard.update_attributes(fight_card_params)
 			redirect_to fight_card_path, :notice => "Your fight card was successfully updated!"
 		else
 			render "edit"
@@ -44,8 +44,8 @@ class FightCardsController < ApplicationController
 
 	private
 
-	def params_fight_card
-  		params.require(:fightcard).permit(:title, :city, :start_time)
+	def fight_card_params
+  		params.require(:fight_card).permit(:title, :start_time, :city)
 	end
 
 end
