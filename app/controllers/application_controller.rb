@@ -33,6 +33,7 @@ def current_user?
 end
 
 def correct_user
+	@user = User.find(params[:id])
 	if current_user != @user
 		flash[:alert] = "That does not belong to you!"
 		redirect_to new_session_path :notice => "You need to be signed in to access that page"
