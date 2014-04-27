@@ -1,11 +1,15 @@
-require 'spec_helper'
 
-describe "users/edit.html.erb" do
-	before { visit edit_user_path }
-	let(:user) {FactoryGirl.create(:user)}
-	subject { page }
+		# describe "user show" do
+		# 	it "should go to the show page" do
+		# 		click_link("Thor")
 
-	it "should" do
-		
-	end
-end
+		# 	# it "should edit properly" do
+		# 	# 	click_link "edit"
+		# 	# 	expect(subject).to have_content("edit")
+		# 	# end
+		# 	end
+		# end
+
+			# before do 
+			# 	visit edit_user_path(user) 
+			# end
