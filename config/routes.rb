@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :fight_cards
+  resources :fight
   match '/signin', to: 'sessions#new', :via => 'get'
   match '/logout', to: 'sessions#destroy', :via => 'delete'
   match '/signup', to: 'users#new', :via => 'get'

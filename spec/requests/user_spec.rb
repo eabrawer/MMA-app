@@ -1,11 +1,24 @@
 require 'spec_helper'
 
-describe "sessions" do
+describe "sessions and users" do
+	let(:user) {FactoryGirl.create(:user)}
+	subject { page }
+
+	describe "Signup" do
+		before { visit signup_path }
+
+		it "should sign up a new user" do
+			fill_in "username", 	with: user.username
+			fill_in "email", 	with: user.email
+			fill_in "password", with: user.password	
+			fill_in "password_confirmation", with: user.password_confirmation
+			click_button "save"	
+			expect(subject).to have_content("Your account was successfully created!")
+		end
+	end
+
 	describe "Login" do
 		before { visit signin_path }
-		let(:user) {FactoryGirl.create(:user)}
-		let(:user2) {FactoryGirl.create(:user2)}
-		subject { page }
 
 		before do
 			fill_in "email", 	with: user.email

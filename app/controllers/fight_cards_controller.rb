@@ -17,7 +17,7 @@ class FightCardsController < ApplicationController
 	def create
 		@fightcard = FightCard.new(fight_card_params)
 		if @fightcard.save
-			redirect_to fight_card_path, :notice => "Your fight card was successfully created!"
+			redirect_to @fightcard, :notice => "Your fight card was successfully created!"
 		else
 			render "new"
 		end
@@ -30,13 +30,13 @@ class FightCardsController < ApplicationController
 	def update
 		@fightcard = FightCard.find(params[:id])
 		if @fightcard.update_attributes(fight_card_params)
-			redirect_to fight_card_path, :notice => "Your fight card was successfully updated!"
+			redirect_to @fightcard, :notice => "Your fight card was successfully updated!"
 		else
 			render "edit"
 		end
 	end
 
-	def delete
+	def destroy
 		@fightcard = FightCard.find(params[:id])
 		@fightcard.destroy
 		redirect_to fight_cards_url :notice => "Your fight card was successfully deleted!"
