@@ -69,11 +69,13 @@ describe "Figh Cards" do
 				end
 
 				describe "Creating a fight" do
+					it "shoudld visit fight" do
+						visit fights_path
+					end		
 					it "shoudld create a fight" do
 						visit new_fight_path
 					end				
 				end
-				
 			end
 		end
 	end 

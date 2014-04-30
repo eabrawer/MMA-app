@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415230759) do
+ActiveRecord::Schema.define(version: 20140428200028) do
 
   create_table "fight_cards", force: true do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.string   "city"
     t.string   "start_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fights", force: true do |t|
+    t.integer  "fight_card_id"
+    t.string   "division"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

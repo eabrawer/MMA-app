@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
 private
 
+############ user helpers #####################
 def signed_in?
 	if !current_user
 		flash[:alert] = "Please sign in to view that resource"
@@ -48,5 +49,13 @@ end
 helper_method :current_user
 helper_method :current_user?
 helper_method :admin?
+
+########## fight helpers #############
+
+# def all_card_fights
+# 	@fight = Fight.find(params[:id]) 
+# end
+
+# helper_method :all_card_fights
 
 end

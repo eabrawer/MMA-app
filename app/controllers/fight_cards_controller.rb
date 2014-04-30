@@ -45,7 +45,7 @@ class FightCardsController < ApplicationController
 	private
 
 	def fight_card_params
-  		params.require(:fight_card).permit(:title, :start_time, :city)
+  		params.require(:fight_card).permit(:title, :start_time, :city, :fights_attributes => [:division])
 	end
 
 end

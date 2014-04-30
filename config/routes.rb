@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :fight_cards
-  resources :fight
+  resources :fight_cards do
+    resources :fights
+  end
+  # resources :fights, :only => [:new, :create, :edit, :update, :destroy]
   match '/signin', to: 'sessions#new', :via => 'get'
   match '/logout', to: 'sessions#destroy', :via => 'delete'
   match '/signup', to: 'users#new', :via => 'get'
