@@ -1,0 +1,17 @@
+<!-- <h3>Fights</h3>
+<% @fightcard.fights.each do |fight| %>
+	<%= fight.division %>
+	<%= link_to "Delete Fight", @fight, :confirm => "Are you sure you want to delete this fight?", :method => :delete %>
+	<br />
+<% end %>
+
+<%= form_for @fightcard do |f| %>
+  <ul>
+    <%= f.fields_for :fights, @fightcard.fights.build do |fight_form| %>
+    	<span>Fights</span><br />
+        <%= fight_form.label :division %><br />
+        <%= fight_form.text_field :division, id:"division" %><br />
+        <%= fight_form.submit "save" %>
+    <% end %>
+  </ul>
+<% end %> -->

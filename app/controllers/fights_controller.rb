@@ -1,5 +1,7 @@
 class FightsController < ApplicationController
 
+	before_filter :admin?, :only => [:new, :create, :edit, :update, :destroy]
+
 	def index
 		@fight = Fight.all
 	end
@@ -8,9 +10,9 @@ class FightsController < ApplicationController
 		@fight = Fight.find(params[:id])
 	end
 
-	def new
-		@fight = Fight.new 
-	end
+	# def new
+	# 	@fight = Fight.new 
+	# end
 
 	def create
 		@fight = Fight.new(fight_params)

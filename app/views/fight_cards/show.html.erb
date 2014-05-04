@@ -1,23 +1,12 @@
 <%= @fightcard.title %>
 <%= @fightcard.start_time %>
 <%= @fightcard.city %>
-
-<%= link_to 'Edit', edit_fight_card_path(@fightcard) %>
-<%= link_to "Delete Fight Card", @fightcard, :confirm => "Are you sure you want to delete this fight card?", :method => :delete %>
 <br />
-
 <h3>Fights</h3>
+
 <% @fightcard.fights.each do |fight| %>
 	<%= fight.division %><br />
 <% end %>
 
-<%= form_for @fightcard do |f| %>
-  <ul>
-    <%= f.fields_for :fights, @fightcard.fights.build do |fight_form| %>
-    	<span>Created a Fight</span><br />
-        <%= fight_form.label :division %><br />
-        <%= fight_form.text_field :division, id:"division" %><br />
-        <%= fight_form.submit "save" %>
-    <% end %>
-  </ul>
-<% end %>
+<%= link_to 'Edit', edit_fight_card_path(@fightcard) %>
+<%= link_to "Delete Fight Card", @fightcard, :confirm => "Are you sure you want to delete this fight card?", :method => :delete %>

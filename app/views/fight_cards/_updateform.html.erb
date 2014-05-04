@@ -3,10 +3,14 @@
 	<%= f.text_field :start_time, id:"start_time", :placeholder => 'Enter your start time' %><br />
 	<%= f.text_field :city, id:"city", :placeholder => 'Enter your city' %><br />
 
+	<span>Fights</span><br />
 
-    <%= f.fields_for :fights, @fightcard.fights.build do |fight_form| %>
-    	<span>Fights</span><br />
-        <%= fight_form.label :division %><br />
+    <%= f.fields_for :fights, @fightcard.fights do |fight_form| %>
+        <span>Fight</span><br />
+        <%= fight_form.label :division %>
+        <%= fight_form.check_box :_destroy %>
+        <%= fight_form.label :_destroy, "Remove Question" %>
+        <br />
         <%= fight_form.text_field :division, id:"division" %><br />
     <% end %>
 
